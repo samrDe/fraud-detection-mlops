@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+# Local data and DVC cache
+data/raw/*.csv
+data/processed/*.csv
+.dvc/cache/
+# Model and experiment outputs (DVC tracks selected outputs)
+artifacts/*
+!artifacts/.gitkeep
+mlruns/
+# Reports generated locally
+reports/*
+!reports/.gitkeep
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
+.env
