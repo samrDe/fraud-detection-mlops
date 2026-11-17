@@ -1,10 +1,19 @@
+import sys
+from pathlib import Path
+
+# Add project root to Python import path
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(PROJECT_ROOT))
+
 import pytest
 from fastapi.testclient import TestClient
 import src.api as api
 
+
 class DummyModel:
     def predict_proba(self, frame):
         return [[0.9, 0.1]]
+
 
 @pytest.fixture
 def client(monkeypatch):
