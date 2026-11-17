@@ -3,7 +3,7 @@ def sample_features():
 
 def test_health(client):
     response = client.get("/health")
-    assert response.status_code == 200
+    assert response.status_code == 200, response.text
     assert response.json()["status"] == "ok"
 
 def test_predict_valid_payload(client):
